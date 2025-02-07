@@ -11,10 +11,12 @@ var config = require('./../config');
 var BASE_PATH = process.env.BASE_PATH || '/dev-innovarashopix/';
 
 module.exports = {
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     mode: 'production',
     entry: {
-        app: ['react-hot-loader/patch', path.join(config.srcDir, 'index.js')]
+        app: [
+            // 'react-hot-loader/patch',
+            path.join(config.srcDir, 'index.js')]
     },
     output: {
         filename: '[name].bundle.js',
@@ -143,15 +145,16 @@ module.exports = {
                 }
             }
         ]
-    },
-    devServer: {
-        hot: false,
-        contentBase: config.distDir,
-        compress: true,
-        historyApiFallback: {
-            index: BASE_PATH,
-        },
-        host: 'https://hashveno.onrender.com',
-        port: 80
     }
+    // ,
+    // devServer: {
+    //     hot: false,
+    //     contentBase: config.distDir,
+    //     compress: true,
+    //     historyApiFallback: {
+    //         index: BASE_PATH,
+    //     },
+    //     host: '0.0.0.0',
+    //     port: 80
+    // }
 }
