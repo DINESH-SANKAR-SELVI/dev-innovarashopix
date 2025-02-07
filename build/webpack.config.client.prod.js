@@ -8,7 +8,7 @@ var CircularDependencyPlugin = require('circular-dependency-plugin');
 
 var config = require('./../config');
 
-var BASE_PATH = process.env.BASE_PATH || '/';
+var BASE_PATH = process.env.BASE_PATH || '/dev-innovarashopix/';
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -149,9 +149,9 @@ module.exports = {
         contentBase: config.distDir,
         compress: true,
         historyApiFallback: {
-            index: '/'
+            index: BASE_PATH,
         },
-        host: '0.0.0.0',
-        port: 4100
+        host: 'https://hashveno.onrender.com',
+        port: 80
     }
 }

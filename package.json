@@ -2,6 +2,7 @@
   "name": "airframe-dashboard",
   "version": "0.1.0",
   "description": "Seed project for flexible light React/Bootstrap 4 dashboards.",
+  "homepage": "http://dinesh-sankar-selvi.github.io/dev-innovarashopix/",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,10 +10,12 @@
     "build:dev": "node ./build/cli-tools.js --clear dist --create dist && webpack --config ./build/webpack.config.client.dev.js",
     "build:prod": "node ./build/cli-tools.js --clear dist --create dist && webpack --config ./build/webpack.config.client.prod.js",
     "start:dev": "node ./build/cli-tools.js --clear dist --create dist && webpack-dev-server --config ./build/webpack.config.client.dev.js",
-    "start:prod": "node ./build/cli-tools.js --clear dist --create dist && webpack-dev-server --config ./build/webpack.config.client.prod.js"
+    "start:prod": "node ./build/cli-tools.js --clear dist --create dist && webpack-dev-server --config ./build/webpack.config.client.prod.js",
+    "predeploy": "npm run build:prod",
+    "deploy": "gh-pages -d dist"
   },
-  "author": "Webkom",
-  "license": "ISC",
+  "author": "DINESH SANKAR",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
@@ -35,6 +38,7 @@
     "eslint-plugin-react": "^7.13.0",
     "extract-css-chunks-webpack-plugin": "^4.5.2",
     "file-loader": "^4.0.0",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^3.2.0",
     "mkdirp": "^0.5.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
